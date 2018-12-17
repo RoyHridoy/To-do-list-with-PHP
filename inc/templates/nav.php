@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION['userLoggedIn'] != true) {
+    header("location: auth.php");
+}
+?>
+
 <div class="header-area">
     <div class="container">
         <div class="row">
@@ -10,9 +18,8 @@
                 <div class="mainmenu">
                     <ul>
                         <li><a href="index.php?task=toDoList">To do lists</a></li>
-                        <li><a href="index.php?task=username">username</a></li>
+                        <li><a href="index.php?task=username"><?php echo $_SESSION['user']; ?></a></li>
                         <li><a href="auth.php?logout=true">logout</a></li>
-                        <li><a href="auth.php">login</a></li>
                     </ul>
                 </div>
             </div>
