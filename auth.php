@@ -2,7 +2,6 @@
 
 <?php
 session_start();
-
 if (isset($_SESSION['userLoggedIn']) == true) {
     header("location: index.php");
 }

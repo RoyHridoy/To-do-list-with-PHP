@@ -17,8 +17,8 @@ if (isset($_POST['submit'])) {
 
     if (isset($fname) && isset($lname) && isset($email) && isset($password) && isset($confirmPass) && isset($term)) {
         if (($password == $confirmPass) && !isDuplicateEmail($email)) {
-            createAccount($fname, $lname, $email, $password);
-            $successMessage = "You have successfully create your account.";
+            $username = createAccount($fname, $lname, $email, $password);
+            $successMessage = "You have successfully create your account. Your username is <strong>{$username}</strong>";
             $clearInput     = true;
         } elseif (isDuplicateEmail($email)) {
             $errorMessage = "Email address already exist.";
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 
                     <?php if (isset($successMessage)) : ?>
                         <div class="alert alert-success" role="alert">
-                            <strong> <?php echo $successMessage; ?> </strong>
+                            <?php echo $successMessage; ?>
                         </div>
                     <?php endif; ?>
 

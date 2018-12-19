@@ -17,7 +17,8 @@ if ($_SESSION['userLoggedIn'] != true) {
             <div class="col-9">
                 <div class="mainmenu">
                     <ul>
-                        <li><a href="index.php?task=toDoList">To do lists</a></li>
+                        <li><a href="index.php?task=add">Add To do list</a></li>
+                        <li><a href="index.php?task=toDoList">Show lists</a></li>
                         <li><a href="index.php?task=username"><?php echo $_SESSION['user']; ?></a></li>
                         <li><a href="auth.php?logout=true">logout</a></li>
                     </ul>
